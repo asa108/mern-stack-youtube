@@ -13,8 +13,12 @@ const getGoals = (req, res) => {
 // @route POST /api/goals
 // @access Privete
 const setGoals = (req, res) => {
+    if (!req.body.text) {
+        res.status(400)
+        throw new Error ('Please add a text')
+   }
        res.status(200).json({
-        message:`Update goal ${req.params.id}`
+        message:'Create goal'
     });
 }
 
