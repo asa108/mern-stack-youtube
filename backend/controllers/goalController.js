@@ -1,15 +1,17 @@
 // avoide using then & ctach method
 const asyncHandler = require('express-async-handler')
 
+const Goal = require('../models/goalModel')
+
 // function for goalRoutes
 
 // @desc Get all goals 
 // @route GET /api/goals
 // @access Privete
-const getGoals = asyncHandler(async(req, res) => {
-        res.status(200).json({
-        message:'Get goals'
-    });
+const getGoals = asyncHandler(async (req, res) => {
+    const goals = await Goal.find()
+
+    res.status(200).json(goals);
 })
 
 // @desc Set goals 
