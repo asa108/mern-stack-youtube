@@ -1,3 +1,4 @@
+// avoide using then & ctach method
 const asyncHandler = require('express-async-handler')
 
 // function for goalRoutes
